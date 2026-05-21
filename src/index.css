@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #e2e8f0;
+  background: #050816;
+  font-family: Manrope, "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: #e2e8f0;
+  font-family: Manrope, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(34, 211, 238, 0.08), transparent 28%),
+    radial-gradient(circle at top right, rgba(99, 102, 241, 0.08), transparent 24%),
+    linear-gradient(180deg, #050816 0%, #081021 52%, #050816 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(86, 240, 255, 0.6), rgba(139, 92, 246, 0.7));
+  border-radius: 999px;
+}
+
+.glass-panel {
+  @apply border border-white/10 bg-white/[0.055] backdrop-blur-2xl shadow-neon;
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.10), transparent 18%, transparent 75%, rgba(34,211,238,0.08));
+  pointer-events: none;
+}
+
+.headline-gradient {
+  @apply bg-gradient-to-r from-cyan-300 via-sky-300 to-[#8b5cf6] bg-clip-text text-transparent;
+}
+
+.display-title {
+  @apply font-display tracking-[-0.04em];
+}
+
+.section-shell {
+  @apply rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 shadow-neon md:p-8;
+}
+
+.eyebrow-chip {
+  @apply inline-flex rounded-full border border-cyan-300/25 bg-cyan-300/10 px-4 py-2 text-xs uppercase tracking-[0.32em] text-cyan-200;
+}
+
+.primary-btn {
+  @apply rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-[#8b5cf6] px-6 py-3 font-semibold text-slate-950 transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(56,189,248,0.35)];
+}
+
+.secondary-btn {
+  @apply rounded-full border border-white/10 bg-white/[0.03] px-6 py-3 font-medium text-slate-100 transition duration-300 hover:border-cyan-300/40 hover:bg-cyan-400/10 hover:text-cyan-100;
+}
+
+.metric-tile {
+  @apply rounded-[1.5rem] border border-white/10 bg-slate-950/40 p-4 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/20 hover:bg-slate-900/60;
+}
+
+.surface-grid {
+  background-image:
+    linear-gradient(rgba(148,163,184,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148,163,184,0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
